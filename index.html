@@ -1,0 +1,1019 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CAN SOFTWARE - İnteraktif oyunlar, yapay zekâ ve yazılım geliştirme.">
+<title>CAN SOFTWARE | Resmî Web Sitesi</title>
+
+<style>
+:root {
+    --red: #ff183c;
+    --dark: #070709;
+    --panel: #111116;
+    --text: #ffffff;
+    --muted: #a4a4af;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    line-height: 1.7;
+}
+
+::selection {
+    background: var(--red);
+    color: white;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--red);
+}
+
+#particles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background: rgba(7,7,9,.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid #ff183c35;
+}
+
+.navbar {
+    max-width: 1400px;
+    margin: auto;
+    padding: 18px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: white;
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--red);
+    text-shadow: 0 0 20px var(--red);
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: #ddd;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--red);
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: 0;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 130px 20px 70px;
+    background: radial-gradient(
+        ellipse at center,
+        #ff183c18,
+        transparent 65%
+    );
+}
+
+.hero-content {
+    max-width: 1000px;
+}
+
+.tag {
+    display: inline-block;
+    border: 1px solid #ff183c60;
+    color: var(--red);
+    background: #ff183c0d;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 9vw, 110px);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -3px;
+}
+
+.hero h1 span {
+    color: var(--red);
+    text-shadow: 0 0 45px #ff183c55;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 28px auto;
+    color: var(--muted);
+    font-size: 18px;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 28px;
+    border: 1px solid var(--red);
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn-primary {
+    background: var(--red);
+    box-shadow: 0 0 25px #ff183c35;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 30px #ff183c60;
+}
+
+section {
+    max-width: 1250px;
+    margin: auto;
+    padding: 100px 5%;
+}
+
+.section-label {
+    color: var(--red);
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+.section-title {
+    font-size: clamp(30px, 5vw, 48px);
+    margin: 10px 0 15px;
+    line-height: 1.2;
+}
+
+.section-desc {
+    color: var(--muted);
+    max-width: 750px;
+    margin-bottom: 40px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.card {
+    background: linear-gradient(145deg,#15151b,#0d0d12);
+    border: 1px solid #ffffff12;
+    padding: 30px;
+    border-radius: 16px;
+    transition: .35s;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    border-color: var(--red);
+    transform: translateY(-7px);
+    box-shadow: 0 10px 45px #ff183c15;
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.status {
+    display: inline-block;
+    color: #ff647d;
+    background: #ff183c12;
+    border: 1px solid #ff183c30;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.game-cover {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(
+        circle at center,
+        #701020,
+        #08080b 85%
+    );
+    border-radius: 10px;
+    margin-bottom: 22px;
+    border: 1px solid #ff183c30;
+}
+
+.game-cover strong {
+    font-size: 29px;
+    line-height: 1.1;
+    font-style: italic;
+    text-shadow: 0 0 20px #ff183c;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 20px 0;
+}
+
+.features span {
+    background: #ffffff08;
+    border: 1px solid #ffffff15;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 11px;
+    color: #ccc;
+}
+
+.about-box {
+    background: var(--panel);
+    border-left: 4px solid var(--red);
+    padding: 35px;
+    border-radius: 12px;
+    color: #ccc;
+}
+
+.timeline {
+    border-left: 2px solid #ff183c50;
+    padding-left: 30px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 35px;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -37px;
+    top: 10px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--red);
+    box-shadow: 0 0 15px var(--red);
+}
+
+.timeline-item p {
+    color: var(--muted);
+}
+
+.founder {
+    text-align: center;
+    padding: 45px 20px;
+    border: 1px solid #ff183c35;
+    background: radial-gradient(
+        circle at top,
+        #ff183c12,
+        #111116
+    );
+    border-radius: 20px;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    border: 2px solid var(--red);
+    background: #1c1016;
+    display: grid;
+    place-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    box-shadow: 0 0 30px #ff183c35;
+}
+
+.contact-card {
+    text-align: center;
+}
+
+.contact-card a {
+    margin-top: 20px;
+}
+
+footer {
+    border-top: 1px solid #ff183c30;
+    background: #08080c;
+    padding: 45px 20px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+footer .logo {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.js .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity .7s, transform .7s;
+}
+
+.js .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#topBtn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: var(--red);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+    z-index: 90;
+}
+
+@media(max-width: 900px) {
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        right: 0;
+        padding: 25px;
+        background: #101016;
+        flex-direction: column;
+        border-bottom: 1px solid var(--red);
+    }
+
+    nav.open {
+        display: flex;
+    }
+
+    section {
+        padding: 70px 6%;
+    }
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        transition: none !important;
+    }
+
+    #particles {
+        display: none;
+    }
+
+    .js .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="particles" aria-hidden="true"></canvas>
+
+<header>
+    <div class="navbar">
+        <a href="#anasayfa" class="logo">
+            CAN <span>SOFTWARE</span>
+        </a>
+
+        <button class="menu-btn" id="menuBtn"
+            aria-label="Menüyü aç"
+            aria-expanded="false">☰</button>
+
+        <nav id="nav">
+            <a href="#anasayfa">Ana Sayfa</a>
+            <a href="#hakkimizda">Hakkımızda</a>
+            <a href="#oyunlar">Oyunlar</a>
+            <a href="#yazilimlar">Yazılımlar</a>
+            <a href="#gelistirme">Geliştirme</a>
+            <a href="#iletisim">İletişim</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+<div class="hero" id="anasayfa">
+    <div class="hero-content">
+        <div class="tag">
+            BAĞIMSIZ YAZILIM GELİŞTİRME
+        </div>
+
+        <h1>CAN<br><span>SOFTWARE</span></h1>
+
+        <p>
+            Teknolojiyi geliştiriyor, oyunları yeniden
+            şekillendiriyor ve dijital dünyaya yenilikçi
+            çözümler sunuyoruz.
+        </p>
+
+        <div class="buttons">
+            <a href="#oyunlar" class="btn btn-primary">
+                Projelerimizi Keşfet
+            </a>
+
+            <a href="#iletisim" class="btn">
+                İletişime Geç
+            </a>
+        </div>
+    </div>
+</div>
+
+<section id="hakkimizda" class="reveal">
+    <div class="section-label">BİZ KİMİZ?</div>
+    <h2 class="section-title">CAN SOFTWARE Hakkında</h2>
+
+    <div class="about-box">
+        <p>
+            CAN SOFTWARE; interaktif oyunlar, yapay zekâ
+            sistemleri, canlı yayın teknolojileri ve
+            dijital yazılımlar geliştiren bağımsız bir
+            yazılım markasıdır.
+        </p>
+
+        <br>
+
+        <p>
+            Amacımız, içerik üreticilerine ve kullanıcılara
+            yenilikçi, erişilebilir ve kaliteli teknolojiler
+            sunmaktır. Özellikle TikTok LIVE yayınlarına
+            yönelik interaktif oyunlar geliştirerek
+            izleyicileri eğlencenin bir parçası haline
+            getirmeyi hedefliyoruz.
+        </p>
+    </div>
+</section>
+
+<section class="reveal">
+    <div class="section-label">UZMANLIK ALANLARIMIZ</div>
+    <h2 class="section-title">Neler Yapıyoruz?</h2>
+
+    <div class="grid">
+
+        <article class="card">
+            <div class="card-icon">🎮</div>
+            <h3>İnteraktif Oyunlar</h3>
+            <p>
+                TikTok LIVE hediyeleri, beğenileri ve
+                takipleriyle etkileşime giren oyunlar.
+            </p>
+        </article>
+
+        <article class="card">
+            <div class="card-icon">🧠</div>
+            <h3>Yapay Zekâ</h3>
+            <p>
+                Akıllı sohbet, araştırma, dosya analizi
+                ve görsel üretim teknolojileri.
+            </p>
+        </article>
+
+        <article class="card">
+            <div class="card-icon">💻</div>
+            <h3>Yazılım Geliştirme</h3>
+            <p>
+                Web uygulamaları, masaüstü yazılımları
+                ve dijital otomasyon çözümleri.
+            </p>
+        </article>
+
+        <article class="card">
+            <div class="card-icon">📡</div>
+            <h3>Canlı Yayın Sistemleri</h3>
+            <p>
+                Yayıncılar için etkileşim araçları,
+                widget sistemleri ve yayın teknolojileri.
+            </p>
+        </article>
+
+    </div>
+</section>
+
+<section id="oyunlar" class="reveal">
+    <div class="section-label">CAN SOFTWARE GAMES</div>
+    <h2 class="section-title">TikTok İnteraktif Oyunlar</h2>
+
+    <p class="section-desc">
+        İzleyicilerin hediyeleriyle oyunun gidişatını
+        değiştirebildiği interaktif yayın deneyimleri.
+    </p>
+
+    <div class="grid">
+
+        <article class="card">
+            <div class="game-cover">
+                <strong>TIKTOK RUN<br>TÜRKİYE</strong>
+            </div>
+
+            <span class="status">GELİŞTİRİLEN PROJE</span>
+
+            <h3>TIKTOK RUN Türkiye</h3>
+
+            <p>
+                TikTok hediyeleriyle mesafe kazanılan,
+                kaybedilen ve WIN hedeflerine ulaşılan
+                interaktif 3D koşu oyunu.
+            </p>
+
+            <div class="features">
+                <span>3D Oyun</span>
+                <span>Windows</span>
+                <span>TikTok LIVE</span>
+                <span>WIN Sistemi</span>
+            </div>
+
+            <a href="#iletisim" class="btn btn-primary">
+                Bilgi ve İletişim
+            </a>
+        </article>
+
+        <article class="card">
+            <div class="game-cover">
+                <strong>TIKTOK RUN<br>GLOBAL</strong>
+            </div>
+
+            <span class="status">GELİŞTİRİLİYOR</span>
+
+            <h3>TIKTOK RUN Global</h3>
+
+            <p>
+                Türkiye ve dünya genelindeki izleyicilerin
+                aynı karakteri ve ortak oyun hedeflerini
+                hediyelerle etkileyebildiği oyun deneyimi.
+            </p>
+
+            <div class="features">
+                <span>Global Hediyeler</span>
+                <span>3D</span>
+                <span>Tek Karakter</span>
+                <span>Ortak WIN</span>
+            </div>
+
+            <a href="#iletisim" class="btn">
+                Bilgi Al
+            </a>
+        </article>
+
+        <article class="card">
+            <div class="game-cover">
+                <strong>NEW<br>GAMES</strong>
+            </div>
+
+            <span class="status">PLANLANIYOR</span>
+
+            <h3>Yeni İnteraktif Oyunlar</h3>
+
+            <p>
+                Canlı yayınlara özel yeni oyun
+                konseptleri ve farklı hediye
+                etkileşim mekanikleri.
+            </p>
+
+            <div class="features">
+                <span>Yeni Projeler</span>
+                <span>İnteraktif</span>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<section id="yazilimlar" class="reveal">
+    <div class="section-label">CAN SOFTWARE TECHNOLOGY</div>
+    <h2 class="section-title">Yazılımlarımız</h2>
+
+    <div class="grid">
+
+        <article class="card">
+            <div class="card-icon">🧠</div>
+            <span class="status">YAPAY ZEKÂ PROJESİ</span>
+
+            <h3>CAN SOFTWARE AI PRO</h3>
+
+            <p>
+                Akıllı sohbet, araştırma, dosya analizi
+                ve görsel üretim özellikleri üzerine
+                geliştirilen yapay zekâ platformu.
+            </p>
+
+            <div class="features">
+                <span>AI</span>
+                <span>Web</span>
+                <span>Türkçe</span>
+            </div>
+
+            <a href="https://cansoftware-bice.vercel.app/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn btn-primary">
+                Platforma Git
+            </a>
+        </article>
+
+        <article class="card">
+            <div class="card-icon">📡</div>
+            <span class="status">GELİŞTİRİLİYOR</span>
+
+            <h3>CAN SOFTWARE LIVE</h3>
+
+            <p>
+                TikTok yayıncıları için hediye yönetimi,
+                yorum seslendirme, widget ve oyun
+                bağlantısı özellikleri.
+            </p>
+
+            <div class="features">
+                <span>TTS</span>
+                <span>Widget</span>
+                <span>Webhook</span>
+                <span>Windows</span>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<section id="gelistirme" class="reveal">
+    <div class="section-label">GELİŞTİRME MERKEZİ</div>
+    <h2 class="section-title">Proje Yol Haritamız</h2>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+            <span class="status">OYUN GELİŞTİRME</span>
+            <h3>TikTok İnteraktif Oyun Sistemleri</h3>
+            <p>
+                Yeni oyun mekanikleri, hediye
+                entegrasyonları ve performans iyileştirmeleri.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <span class="status">YAYIN TEKNOLOJİLERİ</span>
+            <h3>CAN SOFTWARE LIVE</h3>
+            <p>
+                Yayıncıların etkileşimlerini yönetebileceği
+                kapsamlı masaüstü uygulaması.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <span class="status">ARAŞTIRMA VE GELİŞTİRME</span>
+            <h3>Yapay Zekâ Altyapısı</h3>
+            <p>
+                Daha bağımsız, erişilebilir ve gelişmiş
+                yapay zekâ çözümleri üzerine çalışmalar.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section id="duyurular" class="reveal">
+    <div class="section-label">HABERLER</div>
+    <h2 class="section-title">Duyurular</h2>
+
+    <div class="grid">
+        <article class="card">
+            <span class="status">PROJELER</span>
+            <h3>İnteraktif Oyun Çalışmaları</h3>
+            <p>
+                Yeni oyunlarımız ve geliştirme
+                çalışmalarımız hakkındaki duyuruları
+                bu bölümden takip edebilirsiniz.
+            </p>
+        </article>
+    </div>
+</section>
+
+<section id="kurucu" class="reveal">
+    <div class="section-label">KURUCUMUZ</div>
+    <h2 class="section-title">CAN SOFTWARE Kurucusu</h2>
+
+    <div class="founder">
+        <div class="avatar">AC</div>
+        <h2>Ahmet Utku Can</h2>
+        <p style="color:#ff183c">
+            Kurucu & Yazılım Geliştirici
+        </p>
+
+        <p style="color:#aaa; margin-top:15px">
+            CAN SOFTWARE markasının kurucusu.
+            Yazılım, interaktif oyunlar ve yapay zekâ
+            teknolojileri üzerine çalışmalar yürütmektedir.
+        </p>
+    </div>
+</section>
+
+<section id="iletisim" class="reveal">
+    <div class="section-label">BİZE ULAŞIN</div>
+    <h2 class="section-title">İletişim</h2>
+
+    <p class="section-desc">
+        Oyunlarımız, yazılımlarımız, teknik destek
+        ve iş birlikleri hakkında bizimle iletişime geçin.
+    </p>
+
+    <div class="grid">
+
+        <article class="card contact-card">
+            <div class="card-icon">📷</div>
+            <h3>Instagram</h3>
+            <p>Resmî Instagram hesabımız.</p>
+            <a id="instagramLink" class="btn">
+                Hesaba Git
+            </a>
+        </article>
+
+        <article class="card contact-card">
+            <div class="card-icon">🎵</div>
+            <h3>TikTok</h3>
+            <p>Oyun tanıtımları ve yayınlarımız.</p>
+            <a id="tiktokLink" class="btn">
+                Hesaba Git
+            </a>
+        </article>
+
+        <article class="card contact-card">
+            <div class="card-icon">✉️</div>
+            <h3>E-posta</h3>
+            <p>Destek ve iş birliği talepleri.</p>
+            <a id="emailLink" class="btn">
+                E-posta Gönder
+            </a>
+        </article>
+
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <a href="#anasayfa" class="logo">
+        CAN <span>SOFTWARE</span>
+    </a>
+
+    <p>Yazılım • Yapay Zekâ • İnteraktif Oyunlar</p>
+
+    <br>
+
+    <p>
+        © <span id="year">2026</span> CAN SOFTWARE.
+        Tüm hakları saklıdır.
+    </p>
+
+    <p>Kurucu: Ahmet Utku Can</p>
+</footer>
+
+<button id="topBtn" aria-label="Yukarı çık">↑</button>
+
+<script>
+
+// İLETİŞİM AYARLARI
+// Resmî adresleri tırnakların arasına ekleyin.
+
+const CONTACT = {
+    instagram: "",
+    tiktok: "",
+    email: ""
+};
+
+function setupContact(id, value, isEmail = false) {
+    const link = document.getElementById(id);
+
+    if (value.trim()) {
+        link.href = isEmail ? "mailto:" + value : value;
+
+        if (!isEmail) {
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+        }
+    } else {
+        link.removeAttribute("href");
+        link.setAttribute("aria-disabled", "true");
+        link.textContent = "Yakında";
+        link.style.opacity = "0.5";
+        link.style.cursor = "default";
+    }
+}
+
+setupContact("instagramLink", CONTACT.instagram);
+setupContact("tiktokLink", CONTACT.tiktok);
+setupContact("emailLink", CONTACT.email, true);
+
+// MOBİL MENÜ
+
+const menuBtn = document.getElementById("menuBtn");
+const nav = document.getElementById("nav");
+
+menuBtn.addEventListener("click", () => {
+    const open = nav.classList.toggle("open");
+    menuBtn.setAttribute("aria-expanded", String(open));
+});
+
+document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", () => {
+        nav.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+    });
+});
+
+// TARİH
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+// KAYDIRMA ANİMASYONLARI
+
+if ("IntersectionObserver" in window) {
+    document.documentElement.classList.add("js");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.05 });
+
+    document.querySelectorAll(".reveal").forEach(el => {
+        observer.observe(el);
+    });
+}
+
+// YUKARI ÇIK
+
+const topBtn = document.getElementById("topBtn");
+
+window.addEventListener("scroll", () => {
+    topBtn.style.display =
+        window.scrollY > 500 ? "block" : "none";
+}, { passive: true });
+
+topBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// NEON PARÇACIK ANİMASYONU
+
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+
+let particles = [];
+
+function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+resize();
+window.addEventListener("resize", resize);
+
+for (let i = 0; i < 55; i++) {
+    particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 1.8 + 0.3,
+        speed: Math.random() * 0.4 + 0.1,
+        opacity: Math.random() * 0.5
+    });
+}
+
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    particles.forEach(p => {
+        ctx.beginPath();
+        ctx.fillStyle = `rgba(255,24,60,${p.opacity})`;
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+
+        p.y -= p.speed;
+
+        if (p.y < 0) {
+            p.y = canvas.height;
+            p.x = Math.random() * canvas.width;
+        }
+    });
+
+    requestAnimationFrame(animate);
+}
+
+if (ctx && !window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+).matches) {
+    animate();
+}
+
+</script>
+
+</body>
+</html>
