@@ -4,24 +4,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#08080a">
-<meta name="description" content="CAN SOFTWARE - TikTok Interactive Oyunlar, yazılım ve dijital teknolojiler.">
-<title>CAN SOFTWARE — Geleceği Kodluyoruz</title>
+<meta name="theme-color" content="#08080b">
+<meta name="description" content="CAN SOFTWARE - TikTok Interactive Oyunlar, yazılım ve yapay zekâ teknolojileri.">
+
+<title>CAN SOFTWARE | Geleceği Kodluyoruz</title>
+
+<link rel="icon" type="image/png" href="logo%20(2).png">
 
 <style>
+
 :root {
-    --bg: #08080a;
-    --panel: #101014;
-    --red: #ff2448;
+    --red: #ff173d;
+    --dark: #08080b;
+    --panel: #121217;
     --text: #f5f5f7;
-    --muted: #9898a5;
+    --muted: #a0a0ad;
     --border: rgba(255,255,255,.09);
 }
 
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -30,9 +34,9 @@ html {
 }
 
 body {
-    background: var(--bg);
+    background: var(--dark);
     color: var(--text);
-    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif;
     line-height: 1.7;
     overflow-x: hidden;
 }
@@ -43,8 +47,13 @@ a {
 }
 
 button {
-    font: inherit;
     cursor: pointer;
+    font: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
 }
 
 ::selection {
@@ -61,48 +70,47 @@ button {
 }
 
 .container {
-    width: min(1240px, 90%);
+    width: min(1280px, 90%);
     margin: auto;
 }
 
+/* ÜST MENÜ */
+
 header {
     position: fixed;
-    inset: 0 0 auto;
-    z-index: 1000;
-    background: rgba(8,8,10,.85);
-    backdrop-filter: blur(24px);
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(8,8,11,.92);
+    backdrop-filter: blur(25px);
     border-bottom: 1px solid var(--border);
+    z-index: 1000;
 }
 
 .navbar {
-    min-height: 82px;
+    min-height: 85px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
+    gap: 25px;
 }
 
 .brand {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 13px;
 }
 
-.brand-icon {
-    width: 43px;
-    height: 43px;
-    display: grid;
-    place-items: center;
-    background: linear-gradient(135deg,#ff2448,#92001c);
-    border-radius: 11px;
-    font-weight: 900;
-    font-size: 17px;
-    box-shadow: 0 0 30px #ff244830;
+.brand-logo {
+    width: 62px;
+    height: 62px;
+    object-fit: contain;
+    border-radius: 8px;
 }
 
 .brand-name {
-    font-size: 17px;
-    font-weight: 800;
+    font-size: 18px;
+    font-weight: 850;
     letter-spacing: 1px;
     line-height: 1.2;
 }
@@ -110,22 +118,22 @@ header {
 .brand-name small {
     display: block;
     font-size: 9px;
+    letter-spacing: 2px;
     color: var(--muted);
-    letter-spacing: 3px;
-    margin-top: 5px;
+    margin-top: 6px;
 }
 
 nav {
     display: flex;
     align-items: center;
-    gap: 28px;
+    gap: 24px;
 }
 
 nav a {
     font-size: 13px;
-    color: #b8b8c2;
-    transition: .25s;
     font-weight: 600;
+    color: #c3c3ce;
+    transition: .25s;
 }
 
 nav a:hover {
@@ -133,27 +141,28 @@ nav a:hover {
 }
 
 .nav-email {
-    border: 1px solid #ff244850;
-    padding: 10px 18px;
+    padding: 10px 17px;
+    border: 1px solid #ff173d50;
     border-radius: 7px;
-    color: white;
 }
 
 .menu-btn {
     display: none;
-    border: 0;
-    background: transparent;
     color: white;
-    font-size: 25px;
+    background: transparent;
+    border: none;
+    font-size: 27px;
 }
+
+/* ANA SAYFA */
 
 .hero {
     min-height: 100vh;
+    padding: 150px 0 90px;
     display: flex;
     align-items: center;
     position: relative;
     isolation: isolate;
-    padding: 150px 0 90px;
     overflow: hidden;
 }
 
@@ -163,102 +172,101 @@ nav a:hover {
     inset: 0;
     z-index: -2;
     background:
-        radial-gradient(ellipse at 80% 45%,
-        #ff244820,transparent 50%),
-        linear-gradient(#ffffff05 1px,transparent 1px),
-        linear-gradient(90deg,#ffffff05 1px,transparent 1px);
-    background-size: auto,65px 65px,65px 65px;
-    mask-image: linear-gradient(black 65%,transparent);
+        radial-gradient(
+            ellipse at 80% 50%,
+            #ff173d22,
+            transparent 50%
+        ),
+        linear-gradient(
+            #ffffff05 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            #ffffff05 1px,
+            transparent 1px
+        );
+    background-size: auto, 60px 60px, 60px 60px;
+    mask-image: linear-gradient(black 65%, transparent);
 }
 
 .hero-layout {
     display: grid;
-    grid-template-columns: 1.2fr .8fr;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 55px;
     align-items: center;
-    gap: 50px;
 }
 
-.eyebrow {
-    color: var(--red);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-}
-
-.hero-label {
+.hero-tag {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 8px 15px;
+    background: #ffffff06;
     border: 1px solid var(--border);
-    background: #ffffff05;
-    border-radius: 50px;
+    padding: 8px 16px;
+    border-radius: 30px;
     font-size: 11px;
-    letter-spacing: 1px;
-    color: #d3d3dc;
+    letter-spacing: 2px;
     margin-bottom: 30px;
 }
 
 .dot {
-    width: 7px;
-    height: 7px;
+    width: 8px;
+    height: 8px;
     background: var(--red);
     border-radius: 50%;
-    box-shadow: 0 0 12px var(--red);
+    box-shadow: 0 0 15px var(--red);
     animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-    50% { opacity: .4; }
+    50% {
+        opacity: .4;
+    }
 }
 
 .hero h1 {
-    font-size: clamp(48px,7vw,95px);
-    font-weight: 850;
-    letter-spacing: -4px;
-    line-height: 1.03;
+    font-size: clamp(45px, 7vw, 95px);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -3px;
 }
 
 .hero h1 span {
-    background: linear-gradient(90deg,#ff2448,#ff778a);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: var(--red);
+    text-shadow: 0 0 40px #ff173d30;
 }
 
 .hero p {
     color: var(--muted);
     font-size: 17px;
-    max-width: 570px;
-    margin: 26px 0;
+    max-width: 620px;
+    margin: 25px 0;
 }
 
 .buttons {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    margin-top: 35px;
+    margin-top: 30px;
 }
 
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    padding: 14px 23px;
-    border-radius: 8px;
-    font-size: 13px;
-    font-weight: 700;
+    padding: 14px 24px;
     border: 1px solid var(--border);
-    transition: .25s;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: .3s;
 }
 
 .btn-primary {
     background: var(--red);
     border-color: var(--red);
-    color: white;
-    box-shadow: 0 8px 30px #ff244825;
+    box-shadow: 0 0 25px #ff173d25;
 }
 
 .btn-secondary {
@@ -268,23 +276,44 @@ nav a:hover {
 .btn:hover {
     transform: translateY(-3px);
     border-color: var(--red);
-    box-shadow: 0 8px 30px #ff244825;
+    box-shadow: 0 0 25px #ff173d30;
 }
 
-.visual {
-    min-height: 430px;
+.hero-visual {
     position: relative;
+    min-height: 470px;
     display: grid;
     place-items: center;
 }
 
+.hero-logo {
+    width: 85%;
+    max-width: 440px;
+    border-radius: 18px;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 0 30px #ff173d40);
+    animation: floatLogo 5s ease-in-out infinite;
+}
+
+@keyframes floatLogo {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
 .orbit {
     position: absolute;
-    width: min(100%,390px);
+    width: 100%;
+    max-width: 510px;
     aspect-ratio: 1;
-    border: 1px solid #ff244835;
+    border: 1px solid #ff173d30;
     border-radius: 50%;
-    animation: spin 20s linear infinite;
+    animation: rotate 25s linear infinite;
 }
 
 .orbit::before {
@@ -300,106 +329,73 @@ nav a:hover {
 }
 
 .orbit.second {
-    width: min(80%,310px);
-    animation: spin 14s linear infinite reverse;
+    width: 92%;
     border-style: dashed;
+    animation-direction: reverse;
+    animation-duration: 18s;
 }
 
-.orbit.third {
-    width: min(65%,250px);
-    animation-duration: 25s;
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
 }
 
-@keyframes spin {
-    to { transform: rotate(360deg); }
-}
-
-.core {
-    width: 185px;
-    height: 185px;
-    display: grid;
-    place-items: center;
-    border-radius: 40px;
-    background: linear-gradient(145deg,#2c1019,#100b10);
-    border: 1px solid #ff244880;
-    box-shadow: 0 0 90px #ff244825,
-        inset 0 0 30px #ff244810;
-    transform: rotate(-10deg);
-}
-
-.core strong {
-    font-size: 76px;
-    letter-spacing: -7px;
-    color: var(--red);
-    transform: rotate(10deg);
-    text-shadow: 0 0 35px #ff244860;
-}
-
-.floating {
-    position: absolute;
-    background: #121217e8;
-    border: 1px solid var(--border);
-    padding: 12px 18px;
-    border-radius: 10px;
-    font-size: 11px;
-    letter-spacing: 2px;
-    color: #ccc;
-    backdrop-filter: blur(15px);
-}
-
-.floating.one {
-    top: 12%;
-    right: 0;
-}
-
-.floating.two {
-    bottom: 14%;
-    left: 0;
-}
+/* TEKNOLOJİ ŞERİDİ */
 
 .strip {
     border-block: 1px solid var(--border);
-    background: #ffffff02;
+    background: #ffffff03;
 }
 
 .strip-grid {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .strip-item {
-    padding: 30px 18px;
+    padding: 28px 15px;
     text-align: center;
     border-right: 1px solid var(--border);
 }
 
 .strip-item:last-child {
-    border: 0;
+    border-right: none;
 }
 
 .strip-item strong {
     display: block;
-    font-size: 18px;
-    letter-spacing: -.5px;
+    font-size: 17px;
+    letter-spacing: 1px;
 }
 
 .strip-item small {
     color: var(--muted);
-    font-size: 11px;
+    font-size: 12px;
 }
+
+/* GENEL BÖLÜMLER */
 
 section {
     padding: 100px 0;
 }
 
+.eyebrow {
+    color: var(--red);
+    font-size: 11px;
+    font-weight: 750;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
 .section-head {
-    max-width: 760px;
+    max-width: 800px;
     margin-bottom: 40px;
 }
 
 .section-head h2 {
-    font-size: clamp(30px,4.5vw,50px);
-    line-height: 1.15;
+    font-size: clamp(30px, 4.5vw, 50px);
+    line-height: 1.2;
     letter-spacing: -1.5px;
     margin: 12px 0 18px;
 }
@@ -410,155 +406,123 @@ section {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
 }
 
 .card {
-    background: linear-gradient(145deg,#151519,#0e0e12);
+    background: linear-gradient(
+        145deg,
+        #16161c,
+        #0d0d12
+    );
     border: 1px solid var(--border);
     border-radius: 15px;
     padding: 30px;
-    transition: .3s;
-    position: relative;
-    overflow: hidden;
+    transition: .35s;
 }
 
 .card:hover {
+    border-color: #ff173d65;
     transform: translateY(-5px);
-    border-color: #ff244850;
-}
-
-.card-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 10px;
-    display: grid;
-    place-items: center;
-    background: #ff244810;
-    border: 1px solid #ff244825;
-    color: var(--red);
-    margin-bottom: 25px;
-}
-
-.card-icon svg {
-    width: 24px;
-    height: 24px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.6;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+    box-shadow: 0 10px 40px #ff173d10;
 }
 
 .card h3 {
-    font-size: 20px;
-    letter-spacing: -.4px;
+    font-size: 21px;
     margin-bottom: 12px;
 }
 
 .card p {
-    font-size: 14px;
     color: var(--muted);
+    font-size: 14px;
 }
 
 .card .btn {
     margin-top: 25px;
 }
 
+.card-icon {
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    color: var(--red);
+    background: #ff173d10;
+    border: 1px solid #ff173d30;
+    border-radius: 10px;
+    margin-bottom: 22px;
+}
+
+.card-icon svg {
+    width: 25px;
+    height: 25px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* HAKKIMIZDA */
+
 .about-layout {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    grid-template-columns: 1.2fr .8fr;
     align-items: center;
+    gap: 60px;
 }
 
 .about-text p {
     color: var(--muted);
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 
-.code-panel {
-    background: #0c0c10;
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    overflow: hidden;
+.about-logo-box {
+    padding: 25px;
+    border: 1px solid #ff173d30;
+    background: radial-gradient(
+        circle,
+        #ff173d15,
+        #101014
+    );
+    border-radius: 20px;
 }
 
-.code-top {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    background: #17171d;
-    padding: 15px;
-    border-bottom: 1px solid var(--border);
+.about-logo {
+    width: 100%;
+    max-width: 330px;
+    margin: auto;
+    border-radius: 12px;
 }
 
-.code-top i {
-    width: 9px;
-    height: 9px;
-    background: #ff2448;
-    border-radius: 50%;
-}
-
-.code-top i:nth-child(2) {
-    background: #ffba52;
-}
-
-.code-top i:nth-child(3) {
-    background: #4acb83;
-}
-
-.code-top span {
-    margin-left: 12px;
-    font-size: 11px;
-    color: var(--muted);
-}
-
-.code-body {
-    padding: 30px;
-    font-family: Consolas,monospace;
-    font-size: clamp(12px,1.4vw,15px);
-    line-height: 2.3;
-    color: #d0d0db;
-    overflow-wrap: anywhere;
-}
-
-.code-red {
-    color: #ff5473;
-}
-
-.code-green {
-    color: #83d9b0;
-}
+/* OYUN BÖLÜMÜ */
 
 .game-panel {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;
+    gap: 40px;
+    padding: 50px;
     background:
-        radial-gradient(ellipse at 90% 40%,
-        #ff24482b,transparent 50%),
-        linear-gradient(135deg,#17171c,#0a0a0d);
-    border: 1px solid #ff244840;
+        radial-gradient(
+            ellipse at right,
+            #ff173d20,
+            transparent 60%
+        ),
+        linear-gradient(
+            135deg,
+            #17171d,
+            #09090d
+        );
+    border: 1px solid #ff173d40;
     border-radius: 22px;
-    padding: 65px 50px;
-    position: relative;
-    overflow: hidden;
-}
-
-.game-panel::after {
-    content: "LIVE";
-    position: absolute;
-    right: -20px;
-    bottom: -65px;
-    font-size: clamp(100px,20vw,300px);
-    font-weight: 900;
-    color: #ffffff04;
-    pointer-events: none;
 }
 
 .game-panel h3 {
-    font-size: clamp(34px,6vw,75px);
-    letter-spacing: -2px;
-    line-height: 1.08;
+    font-size: clamp(30px, 4.5vw, 62px);
+    line-height: 1.1;
+    letter-spacing: -1px;
     margin: 20px 0;
 }
 
@@ -567,14 +531,34 @@ section {
 }
 
 .game-panel p {
-    color: #b0b0bd;
-    max-width: 650px;
+    color: var(--muted);
 }
 
 .game-panel .btn {
-    margin-top: 30px;
-    position: relative;
-    z-index: 1;
+    margin-top: 25px;
+}
+
+.games-logo {
+    width: 100%;
+    border-radius: 15px;
+    filter: drop-shadow(0 0 25px #ff173d35);
+    transition: .4s;
+}
+
+.games-logo:hover {
+    transform: scale(1.035);
+}
+
+.game-grid {
+    margin-top: 25px;
+}
+
+.number {
+    color: var(--red);
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+    font-family: Consolas, monospace;
 }
 
 .tags {
@@ -585,41 +569,34 @@ section {
 }
 
 .tags span {
-    background: #ffffff05;
     border: 1px solid var(--border);
+    background: #ffffff05;
+    padding: 6px 11px;
     border-radius: 5px;
-    padding: 5px 10px;
-    color: #b9b9c3;
+    color: #bcbcc6;
     font-size: 11px;
 }
 
-.game-grid {
-    margin-top: 20px;
-}
-
-.number {
-    color: var(--red);
-    font-family: Consolas,monospace;
-    font-size: 13px;
-    margin-bottom: 18px;
-}
+/* YAZILIMLAR */
 
 .software-grid {
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .status {
     display: inline-block;
+    padding: 5px 12px;
+    color: #ff7189;
+    background: #ff173d12;
+    border: 1px solid #ff173d30;
+    border-radius: 5px;
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 1px;
-    color: #ff718a;
-    background: #ff244810;
-    border: 1px solid #ff244830;
-    padding: 5px 10px;
-    border-radius: 5px;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
+
+/* GELİŞTİRME */
 
 .roadmap {
     border-top: 1px solid var(--border);
@@ -627,16 +604,16 @@ section {
 
 .roadmap-row {
     display: grid;
-    grid-template-columns: 70px 1fr 1.2fr;
+    grid-template-columns: 65px 1fr 1.2fr;
+    align-items: center;
     gap: 25px;
     padding: 30px 10px;
     border-bottom: 1px solid var(--border);
-    align-items: center;
 }
 
 .roadmap-row strong {
     color: var(--red);
-    font-family: Consolas,monospace;
+    font-family: Consolas, monospace;
 }
 
 .roadmap-row h3 {
@@ -648,65 +625,71 @@ section {
     font-size: 14px;
 }
 
+/* KURUCU */
+
 .founder {
     display: flex;
     align-items: center;
     gap: 35px;
-    background: linear-gradient(135deg,#18151b,#101014);
-    border: 1px solid var(--border);
-    padding: 45px;
+    padding: 40px;
+    background: linear-gradient(
+        135deg,
+        #1c1219,
+        #101014
+    );
+    border: 1px solid #ff173d30;
     border-radius: 18px;
 }
 
-.avatar {
-    flex-shrink: 0;
+.founder-avatar {
     width: 115px;
     height: 115px;
+    flex-shrink: 0;
     display: grid;
     place-items: center;
-    font-size: 36px;
-    font-weight: 800;
-    border: 1px solid #ff244850;
-    border-radius: 22px;
-    background: #ff244810;
+    background: #ff173d12;
+    border: 1px solid #ff173d50;
+    border-radius: 20px;
     color: var(--red);
+    font-size: 36px;
+    font-weight: 900;
 }
 
 .founder h3 {
-    font-size: 28px;
-    letter-spacing: -1px;
+    font-size: 30px;
+    margin: 5px 0;
 }
 
 .founder p {
     color: var(--muted);
+    max-width: 750px;
     margin-top: 12px;
 }
 
-.social-grid {
-    grid-template-columns: repeat(3,1fr);
-}
+/* SOSYAL MEDYA */
 
 .social-card {
     display: block;
 }
 
 .social-card .address {
-    font-size: 13px;
+    color: #d5d5de;
     overflow-wrap: anywhere;
-    color: #d3d3dd;
 }
 
 .social-card .arrow {
     display: inline-block;
     color: var(--red);
-    margin-top: 20px;
+    margin-top: 22px;
     font-size: 13px;
     font-weight: 700;
 }
 
+/* ALT BÖLÜM */
+
 footer {
+    background: #0b0b0f;
     border-top: 1px solid var(--border);
-    background: #0a0a0d;
     padding: 50px 0 25px;
 }
 
@@ -714,14 +697,14 @@ footer {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 35px;
     padding-bottom: 35px;
 }
 
 .footer-description {
     color: var(--muted);
     font-size: 13px;
-    max-width: 380px;
+    max-width: 350px;
     margin-top: 20px;
 }
 
@@ -743,31 +726,33 @@ footer {
 }
 
 .footer-bottom {
-    padding-top: 25px;
-    border-top: 1px solid var(--border);
-    color: var(--muted);
-    font-size: 11px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 15px;
+    padding-top: 25px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--muted);
 }
+
+/* ANİMASYONLAR */
 
 #progress {
     position: fixed;
     top: 0;
     left: 0;
-    height: 2px;
     width: 0;
+    height: 3px;
     background: var(--red);
-    box-shadow: 0 0 12px var(--red);
+    box-shadow: 0 0 15px var(--red);
     z-index: 2000;
 }
 
 .js .reveal {
     opacity: 0;
     transform: translateY(25px);
-    transition: opacity .7s,transform .7s;
+    transition: opacity .7s, transform .7s;
 }
 
 .js .reveal.visible {
@@ -775,7 +760,10 @@ footer {
     transform: none;
 }
 
-@media(max-width: 950px) {
+/* MOBİL UYUMLULUK */
+
+@media(max-width: 1050px) {
+
     .menu-btn {
         display: block;
     }
@@ -783,11 +771,11 @@ footer {
     nav {
         display: none;
         position: absolute;
-        top: 82px;
+        top: 100%;
         left: 0;
         right: 0;
-        background: #111116;
         padding: 25px 5%;
+        background: #111116;
         flex-direction: column;
         align-items: stretch;
         border-bottom: 1px solid var(--border);
@@ -798,54 +786,88 @@ footer {
     }
 
     .hero-layout,
-    .about-layout {
+    .about-layout,
+    .game-panel {
         grid-template-columns: 1fr;
     }
 
-    .hero h1 {
-        letter-spacing: -2px;
-    }
-
-    .visual {
+    .hero-visual {
         min-height: 350px;
     }
 
+    .hero-logo {
+        max-width: 350px;
+    }
+
+    .orbit {
+        max-width: 410px;
+    }
+
+    .games-logo {
+        max-width: 550px;
+        margin: auto;
+    }
+
     .grid {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    section {
+        padding: 70px 0;
+    }
+
+}
+
+@media(max-width: 600px) {
+
+    .brand-name {
+        font-size: 15px;
+    }
+
+    .brand-logo {
+        width: 48px;
+        height: 48px;
+    }
+
+    .hero {
+        padding-top: 125px;
+    }
+
+    .hero h1 {
+        font-size: 47px;
+        letter-spacing: -2px;
+    }
+
+    .hero-logo {
+        max-width: 270px;
+    }
+
+    .hero-visual {
+        min-height: 300px;
+    }
+
+    .orbit {
+        max-width: 320px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
     }
 
     .strip-grid {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .strip-item {
         border-bottom: 1px solid var(--border);
     }
 
-    section {
-        padding: 70px 0;
-    }
-}
-
-@media(max-width: 600px) {
-    .grid {
-        grid-template-columns: 1fr;
-    }
-
-    .hero {
-        padding-top: 130px;
-    }
-
-    .hero h1 {
-        font-size: 48px;
-    }
-
     .game-panel {
-        padding: 35px 24px;
+        padding: 28px 22px;
     }
 
     .roadmap-row {
-        grid-template-columns: 35px 1fr;
+        grid-template-columns: 30px 1fr;
         gap: 12px;
     }
 
@@ -856,24 +878,13 @@ footer {
     .founder {
         flex-direction: column;
         text-align: center;
-        padding: 30px;
+        padding: 25px;
     }
 
-    .floating {
-        font-size: 9px;
-    }
-
-    .core {
-        width: 145px;
-        height: 145px;
-    }
-
-    .core strong {
-        font-size: 60px;
-    }
 }
 
 @media(prefers-reduced-motion: reduce) {
+
     html {
         scroll-behavior: auto;
     }
@@ -887,7 +898,9 @@ footer {
         opacity: 1;
         transform: none;
     }
+
 }
+
 </style>
 </head>
 
@@ -895,36 +908,61 @@ footer {
 
 <div id="progress"></div>
 
+<!-- ÜST MENÜ -->
+
 <header>
+
     <div class="container navbar">
 
         <a href="#home" class="brand">
-            <div class="brand-icon">CS</div>
+
+            <img
+                src="logo%20(2).png"
+                class="brand-logo"
+                alt="CAN SOFTWARE Logo">
+
             <div class="brand-name">
+
                 CAN SOFTWARE
+
                 <small>TECHNOLOGY & GAMES</small>
+
             </div>
+
         </a>
 
-        <button class="menu-btn" id="menuBtn"
+        <button
+            class="menu-btn"
+            id="menuBtn"
             aria-label="Menüyü aç"
             aria-expanded="false"
-            aria-controls="nav">☰</button>
+            aria-controls="nav">
+
+            ☰
+
+        </button>
 
         <nav id="nav">
+
             <a href="#home">Ana Sayfa</a>
             <a href="#about">Hakkımızda</a>
             <a href="#games">Interactive Oyunlar</a>
             <a href="#software">Yazılımlar</a>
             <a href="#development">Geliştirme</a>
             <a href="#social">Sosyal Medya</a>
-            <a class="nav-email"
-               href="mailto:ahmet.utku.can1@gmail.com">
+
+            <a
+                class="nav-email"
+                href="mailto:ahmet.utku.can1@gmail.com">
+
                 E-posta ↗
+
             </a>
+
         </nav>
 
     </div>
+
 </header>
 
 <main>
@@ -937,54 +975,60 @@ footer {
 
         <div>
 
-            <div class="hero-label">
+            <div class="hero-tag">
+
                 <span class="dot"></span>
-                BAĞIMSIZ TEKNOLOJİ MARKASI
+
+                TÜRKİYE'DEN DÜNYAYA TEKNOLOJİ
+
             </div>
 
             <h1>
+
                 Geleceği<br>
+
                 <span>Kodluyoruz.</span>
+
             </h1>
 
             <p>
+
                 CAN SOFTWARE olarak interaktif oyunlar,
-                yapay zekâ sistemleri ve yeni nesil
-                yazılım teknolojileri geliştiriyoruz.
-                Dijital deneyimleri yeniden şekillendiriyoruz.
+                yapay zekâ sistemleri, canlı yayın
+                teknolojileri ve yeni nesil yazılım
+                çözümleri geliştiriyoruz.
+
             </p>
 
             <div class="buttons">
 
                 <a href="#games" class="btn btn-primary">
+
                     Projelerimizi Keşfet →
+
                 </a>
 
                 <a href="#about" class="btn btn-secondary">
+
                     Bizi Tanıyın
+
                 </a>
 
             </div>
 
         </div>
 
-        <div class="visual" aria-hidden="true">
+        <div class="hero-visual">
 
-            <div class="orbit"></div>
-            <div class="orbit second"></div>
-            <div class="orbit third"></div>
+            <div class="orbit" aria-hidden="true"></div>
 
-            <div class="core">
-                <strong>CS</strong>
-            </div>
+            <div class="orbit second"
+                 aria-hidden="true"></div>
 
-            <div class="floating one">
-                SOFTWARE ENGINEERING
-            </div>
-
-            <div class="floating two">
-                INTERACTIVE TECHNOLOGY
-            </div>
+            <img
+                src="logo%20(2).png"
+                class="hero-logo"
+                alt="CAN SOFTWARE Türk kurt logosu">
 
         </div>
 
@@ -992,30 +1036,46 @@ footer {
 
 </div>
 
+<!-- TEKNOLOJİ ŞERİDİ -->
+
 <div class="strip">
+
     <div class="container strip-grid">
 
         <div class="strip-item">
+
             <strong>GAMING</strong>
+
             <small>Interactive Oyunlar</small>
+
         </div>
 
         <div class="strip-item">
+
             <strong>SOFTWARE</strong>
+
             <small>Yazılım Teknolojileri</small>
+
         </div>
 
         <div class="strip-item">
+
             <strong>AI</strong>
+
             <small>Yapay Zekâ Sistemleri</small>
+
         </div>
 
         <div class="strip-item">
+
             <strong>LIVE</strong>
-            <small>Canlı Yayın Çözümleri</small>
+
+            <small>Canlı Yayın Teknolojileri</small>
+
         </div>
 
     </div>
+
 </div>
 
 <!-- HAKKIMIZDA -->
@@ -1027,85 +1087,56 @@ footer {
         <div class="about-text">
 
             <div class="section-head">
-                <div class="eyebrow">01 / Hakkımızda</div>
-                <h2>Teknolojiye yeni bir bakış.</h2>
+
+                <div class="eyebrow">
+                    01 / Hakkımızda
+                </div>
+
+                <h2>
+
+                    Türk teknoloji vizyonuyla
+                    geleceğe.
+
+                </h2>
+
             </div>
 
             <p>
+
                 CAN SOFTWARE; interaktif oyunlar,
-                yapay zekâ, masaüstü uygulamaları
-                ve canlı yayın teknolojileri üzerine
-                çalışmalar yürüten bağımsız bir
-                yazılım markasıdır.
+                yapay zekâ, yazılım geliştirme
+                ve canlı yayın teknolojileri
+                alanlarında çalışmalar yürüten
+                bağımsız bir teknoloji markasıdır.
+
             </p>
 
             <p>
-                Hedefimiz, yayıncılar ve içerik üreticileri
-                için yenilikçi teknolojiler geliştirmek,
-                kullanıcı deneyimini iyileştirmek ve
-                dijital dünyaya değer katmaktır.
+
+                Türkiye'den dünyaya ulaşmayı,
+                yenilikçi dijital ürünler geliştirmeyi
+                ve içerik üreticilerine yeni nesil
+                teknolojiler sunmayı hedefliyoruz.
+
             </p>
 
             <p>
-                Her projemizde tasarım, performans
-                ve kullanıcı deneyimini ön planda tutuyoruz.
+
+                Güçlü tasarım, performans,
+                kullanıcı deneyimi ve sürekli gelişim
+                çalışmalarımızın temelini oluşturur.
+
             </p>
 
         </div>
 
-        <div class="code-panel">
+        <div class="about-logo-box">
 
-            <div class="code-top">
-                <i></i><i></i><i></i>
-                <span>can-software.js</span>
-            </div>
-
-            <div class="code-body">
-
-                <span class="code-red">const</span>
-                company = {<br>
-
-                &nbsp; name:
-                <span class="code-green">
-                    "CAN SOFTWARE"
-                </span>,<br>
-
-                &nbsp; founder:
-                <span class="code-green">
-                    "Ahmet Utku Can"
-                </span>,<br>
-
-                &nbsp; vision:
-                <span class="code-green">
-                    "Innovation"
-                </span>,<br>
-
-                &nbsp; projects: [<br>
-
-                &nbsp;&nbsp;
-                <span class="code-green">
-                    "Interactive Games"
-                </span>,<br>
-
-                &nbsp;&nbsp;
-                <span class="code-green">
-                    "Artificial Intelligence"
-                </span>,<br>
-
-                &nbsp;&nbsp;
-                <span class="code-green">
-                    "Software Technologies"
-                </span><br>
-
-                &nbsp; ]<br>
-
-                };<br><br>
-
-                <span class="code-red">
-                    buildTheFuture();
-                </span>
-
-            </div>
+            <img
+                src="logo%20(2).png"
+                class="about-logo"
+                alt="CAN SOFTWARE Kurumsal Logo"
+                loading="lazy">
 
         </div>
 
@@ -1113,7 +1144,7 @@ footer {
 
 </section>
 
-<!-- HİZMETLER -->
+<!-- TEKNOLOJİLER -->
 
 <section class="reveal">
 
@@ -1121,13 +1152,17 @@ footer {
 
         <div class="section-head">
 
-            <div class="eyebrow">02 / Teknolojilerimiz</div>
+            <div class="eyebrow">
+                02 / Teknolojilerimiz
+            </div>
 
             <h2>Fikirden teknolojiye.</h2>
 
             <p>
-                Dijital dünyanın farklı alanlarında
-                yenilikçi projeler geliştiriyoruz.
+
+                Dijital dünyanın farklı alanlarına
+                yönelik yenilikçi çözümler.
+
             </p>
 
         </div>
@@ -1137,20 +1172,29 @@ footer {
             <article class="card">
 
                 <div class="card-icon">
+
                     <svg viewBox="0 0 24 24">
-                        <rect x="3" y="6" width="18"
-                              height="12" rx="4"/>
+
+                        <rect x="3" y="6"
+                              width="18" height="12"
+                              rx="4"/>
+
                         <path d="M7 12h6M10 9v6"/>
+
                         <path d="M16 10h.01M18 14h.01"/>
+
                     </svg>
+
                 </div>
 
                 <h3>Interactive Oyunlar</h3>
 
                 <p>
-                    Canlı yayın izleyicilerinin oyunlara
-                    doğrudan katılmasını sağlayan
-                    interaktif oyun teknolojileri.
+
+                    Canlı yayın izleyicilerinin
+                    oyun deneyimine doğrudan
+                    katılmasını sağlayan sistemler.
+
                 </p>
 
             </article>
@@ -1158,19 +1202,27 @@ footer {
             <article class="card">
 
                 <div class="card-icon">
+
                     <svg viewBox="0 0 24 24">
+
                         <path d="m8 6-6 6 6 6"/>
+
                         <path d="m16 6 6 6-6 6"/>
+
                         <path d="m14 4-4 16"/>
+
                     </svg>
+
                 </div>
 
                 <h3>Yazılım Geliştirme</h3>
 
                 <p>
-                    Modern web uygulamaları, masaüstü
-                    yazılımları ve kullanıcı odaklı
-                    dijital çözümler.
+
+                    Modern web uygulamaları,
+                    masaüstü yazılımları ve
+                    kullanıcı odaklı dijital çözümler.
+
                 </p>
 
             </article>
@@ -1178,24 +1230,34 @@ footer {
             <article class="card">
 
                 <div class="card-icon">
+
                     <svg viewBox="0 0 24 24">
-                        <rect x="5" y="5" width="14"
-                              height="14" rx="3"/>
-                        <rect x="9" y="9" width="6"
-                              height="6" rx="1"/>
+
+                        <rect x="5" y="5"
+                              width="14" height="14"
+                              rx="3"/>
+
+                        <rect x="9" y="9"
+                              width="6" height="6"
+                              rx="1"/>
+
                         <path d="M9 2v3M15 2v3
                         M9 19v3M15 19v3
                         M2 9h3M2 15h3
                         M19 9h3M19 15h3"/>
+
                     </svg>
+
                 </div>
 
                 <h3>Yapay Zekâ</h3>
 
                 <p>
+
                     Akıllı asistanlar, araştırma,
                     dosya analizi ve görsel üretim
-                    teknolojileri üzerine çalışmalar.
+                    teknolojileri.
+
                 </p>
 
             </article>
@@ -1206,7 +1268,7 @@ footer {
 
 </section>
 
-<!-- INTERACTIVE OYUNLAR -->
+<!-- TIKTOK INTERACTIVE OYUNLAR -->
 
 <section id="games" class="reveal">
 
@@ -1214,74 +1276,133 @@ footer {
 
         <div class="section-head">
 
-            <div class="eyebrow">03 / CAN SOFTWARE GAMES</div>
+            <div class="eyebrow">
+                03 / CAN SOFTWARE GAMES
+            </div>
 
-            <h2>Yayınlarınızı oyuna dönüştürün.</h2>
+            <h2>
+
+                Yayınlarınızı oyuna dönüştürün.
+
+            </h2>
 
         </div>
 
         <div class="game-panel">
 
-            <div class="eyebrow">LIVE GAMING TECHNOLOGY</div>
+            <div>
 
-            <h3>
-                TIKTOK<br>
-                <span>INTERACTIVE</span><br>
-                OYUNLAR
-            </h3>
+                <div class="eyebrow">
 
-            <p>
-                TikTok LIVE yayınlarına özel interaktif
-                oyun sistemleri geliştiriyoruz.
-                İzleyicileriniz hediyeleri, beğenileri
-                ve takipleriyle oyun deneyimine katılsın.
-            </p>
+                    LIVE GAMING TECHNOLOGY
 
-            <div class="tags">
-                <span>TikTok LIVE</span>
-                <span>3D Gaming</span>
-                <span>Windows</span>
-                <span>Real-Time Events</span>
-                <span>Webhook</span>
+                </div>
+
+                <h3>
+
+                    TIKTOK<br>
+
+                    <span>INTERACTIVE</span><br>
+
+                    OYUNLAR
+
+                </h3>
+
+                <p>
+
+                    TikTok LIVE yayınlarına özel
+                    interaktif oyun sistemleri
+                    geliştiriyoruz.
+
+                    İzleyicileriniz hediyeleri,
+                    beğenileri ve takipleriyle
+                    oyun deneyiminin bir parçası olsun.
+
+                </p>
+
+                <div class="tags">
+
+                    <span>TikTok LIVE</span>
+                    <span>3D Gaming</span>
+                    <span>Windows</span>
+                    <span>WIN Sistemi</span>
+                    <span>Webhook</span>
+                    <span>Türkiye & Global</span>
+
+                </div>
+
+                <a
+                    href="mailto:ahmet.utku.can1@gmail.com?subject=Interactive%20Oyunlar"
+                    class="btn btn-primary">
+
+                    Bilgi ve Satın Alma →
+
+                </a>
+
             </div>
 
-            <a href="mailto:ahmet.utku.can1@gmail.com?subject=Interactive%20Oyunlar"
-               class="btn btn-primary">
-                Oyunlar Hakkında Bilgi Al →
-            </a>
+            <img
+                src="games-logo.png"
+                class="games-logo"
+                alt="CAN SOFTWARE GAMES Logo"
+                loading="lazy">
 
         </div>
 
         <div class="grid game-grid">
 
             <article class="card">
-                <div class="number">01 — INTERACTION</div>
+
+                <div class="number">
+                    01 — INTERACTION
+                </div>
+
                 <h3>Canlı Hediye Etkileşimi</h3>
+
                 <p>
-                    Hediyelerle oyun içerisindeki
-                    mekanikleri ve olayları
+
+                    TikTok hediyeleriyle oyun
+                    içerisindeki mekanikleri
                     gerçek zamanlı olarak etkileyin.
+
                 </p>
+
             </article>
 
             <article class="card">
-                <div class="number">02 — COMPETITION</div>
+
+                <div class="number">
+                    02 — COMPETITION
+                </div>
+
                 <h3>Rekabet ve WIN Sistemi</h3>
+
                 <p>
-                    Kazanma hedefleri, ödül mekanikleri
-                    ve izleyici etkileşimleriyle
-                    dinamik yayın deneyimleri.
+
+                    Kazanma hedefleri, özel sayaçlar
+                    ve dinamik oyun mekanikleriyle
+                    yayınlarınıza rekabet katın.
+
                 </p>
+
             </article>
 
             <article class="card">
-                <div class="number">03 — CUSTOMIZATION</div>
+
+                <div class="number">
+                    03 — CUSTOMIZATION
+                </div>
+
                 <h3>Özel Oyun Geliştirme</h3>
+
                 <p>
-                    Yayın konseptinize ve ihtiyaçlarınıza
-                    yönelik özelleştirilebilir
-                    interaktif oyun çözümleri.
+
+                    Yayın konseptinize uygun
+                    özelleştirilebilir interaktif
+                    oyun çözümleri.
+
                 </p>
+
             </article>
 
         </div>
@@ -1298,13 +1419,17 @@ footer {
 
         <div class="section-head">
 
-            <div class="eyebrow">04 / Yazılımlarımız</div>
+            <div class="eyebrow">
+                04 / Yazılımlarımız
+            </div>
 
             <h2>CAN SOFTWARE ekosistemi.</h2>
 
             <p>
+
                 Farklı ihtiyaçlara yönelik
-                geliştirdiğimiz dijital teknolojiler.
+                geliştirdiğimiz yazılım teknolojileri.
+
             </p>
 
         </div>
@@ -1314,29 +1439,38 @@ footer {
             <article class="card">
 
                 <div class="status">
+
                     ARTIFICIAL INTELLIGENCE
+
                 </div>
 
                 <h3>CAN SOFTWARE AI PRO</h3>
 
                 <p>
-                    Akıllı sohbet, araştırma, dosya
-                    analizi ve görsel üretim özellikleri
-                    üzerine geliştirilen yapay zekâ
-                    platformumuz.
+
+                    Akıllı sohbet, araştırma,
+                    dosya analizi ve görsel üretim
+                    özellikleri üzerine geliştirilen
+                    yapay zekâ platformumuz.
+
                 </p>
 
                 <div class="tags">
+
                     <span>AI</span>
                     <span>Web Platform</span>
                     <span>Türkçe</span>
+
                 </div>
 
-                <a href="https://cansoftware-bice.vercel.app/"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="btn btn-primary">
+                <a
+                    href="https://cansoftware-bice.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary">
+
                     Platformu Keşfet ↗
+
                 </a>
 
             </article>
@@ -1344,29 +1478,38 @@ footer {
             <article class="card">
 
                 <div class="status">
+
                     GELİŞTİRME AŞAMASINDA
+
                 </div>
 
                 <h3>CAN SOFTWARE LIVE</h3>
 
                 <p>
-                    Canlı yayıncılar için hediye
-                    etkileşimleri, yorum seslendirme,
-                    widget sistemleri ve oyun
-                    entegrasyonları üzerine geliştirilen
-                    masaüstü uygulaması.
+
+                    TikTok yayıncılarına özel
+                    hediye etkileşimi, yorum
+                    seslendirme, widget sistemleri
+                    ve oyun entegrasyonları üzerine
+                    geliştirilen masaüstü yazılımı.
+
                 </p>
 
                 <div class="tags">
+
                     <span>Windows</span>
                     <span>TTS</span>
                     <span>Widgets</span>
                     <span>Live Events</span>
+
                 </div>
 
-                <a href="#development"
-                   class="btn btn-secondary">
+                <a
+                    href="#development"
+                    class="btn btn-secondary">
+
                     Geliştirme Süreci →
+
                 </a>
 
             </article>
@@ -1377,7 +1520,7 @@ footer {
 
 </section>
 
-<!-- GELİŞTİRME -->
+<!-- GELİŞTİRME MERKEZİ -->
 
 <section id="development" class="reveal">
 
@@ -1385,13 +1528,25 @@ footer {
 
         <div class="section-head">
 
-            <div class="eyebrow">05 / Development Center</div>
+            <div class="eyebrow">
 
-            <h2>Sürekli gelişim.<br>Yeni teknolojiler.</h2>
+                05 / Development Center
+
+            </div>
+
+            <h2>
+
+                Sürekli gelişim.<br>
+
+                Yeni teknolojiler.
+
+            </h2>
 
             <p>
+
                 CAN SOFTWARE geliştirme alanları
-                ve proje hedefleri.
+                ve geleceğe yönelik proje hedefleri.
+
             </p>
 
         </div>
@@ -1399,39 +1554,65 @@ footer {
         <div class="roadmap">
 
             <div class="roadmap-row">
+
                 <strong>01</strong>
+
                 <h3>TikTok Interactive Oyunlar</h3>
+
                 <p>
-                    Yeni oyun konseptleri, gerçek zamanlı
-                    hediye etkileşimleri ve oyun mekanikleri.
+
+                    Yeni oyun konseptleri,
+                    hediye etkileşimleri ve
+                    canlı yayın mekanikleri.
+
                 </p>
+
             </div>
 
             <div class="roadmap-row">
+
                 <strong>02</strong>
+
                 <h3>CAN SOFTWARE LIVE</h3>
+
                 <p>
-                    Canlı yayın yönetimi, widget sistemleri
-                    ve yayıncı araçları.
+
+                    Yayın yönetimi, widget
+                    sistemleri ve yayıncı araçları.
+
                 </p>
+
             </div>
 
             <div class="roadmap-row">
+
                 <strong>03</strong>
-                <h3>Yapay Zekâ Altyapısı</h3>
+
+                <h3>Yapay Zekâ Teknolojileri</h3>
+
                 <p>
-                    Bağımsız yapay zekâ altyapıları,
-                    yeni özellikler ve performans çalışmaları.
+
+                    Yapay zekâ altyapıları,
+                    yeni özellikler ve
+                    performans çalışmaları.
+
                 </p>
+
             </div>
 
             <div class="roadmap-row">
+
                 <strong>04</strong>
+
                 <h3>Yeni Nesil Yazılımlar</h3>
+
                 <p>
+
                     Masaüstü ve web tabanlı
                     yeni dijital ürünler.
+
                 </p>
+
             </div>
 
         </div>
@@ -1448,29 +1629,45 @@ footer {
 
         <div class="section-head">
 
-            <div class="eyebrow">06 / Kurucumuz</div>
+            <div class="eyebrow">
 
-            <h2>CAN SOFTWARE'un arkasındaki vizyon.</h2>
+                06 / Kurucumuz
+
+            </div>
+
+            <h2>
+
+                Markamızın arkasındaki vizyon.
+
+            </h2>
 
         </div>
 
         <div class="founder">
 
-            <div class="avatar">AC</div>
+            <div class="founder-avatar">
+
+                AC
+
+            </div>
 
             <div>
 
                 <div class="eyebrow">
+
                     FOUNDER & DEVELOPER
+
                 </div>
 
                 <h3>Ahmet Utku Can</h3>
 
                 <p>
+
                     CAN SOFTWARE markasının kurucusu.
-                    Yazılım teknolojileri, interaktif oyunlar,
-                    yapay zekâ ve canlı yayın sistemleri
+                    Yazılım geliştirme, interaktif oyunlar,
+                    yapay zekâ ve canlı yayın teknolojileri
                     üzerine çalışmalar yürütmektedir.
+
                 </p>
 
             </div>
@@ -1489,85 +1686,128 @@ footer {
 
         <div class="section-head">
 
-            <div class="eyebrow">07 / CAN SOFTWARE NETWORK</div>
+            <div class="eyebrow">
+
+                07 / CAN SOFTWARE NETWORK
+
+            </div>
 
             <h2>Bizi takip edin.</h2>
 
             <p>
+
                 Yeni projeler, oyun tanıtımları,
-                geliştirme süreçleri ve iş birlikleri
-                için resmî hesaplarımız.
+                geliştirme süreçleri, satın alma
+                ve iş birlikleri için resmî hesaplarımız.
+
             </p>
 
         </div>
 
-        <div class="grid social-grid">
+        <div class="grid">
 
-            <a class="card social-card"
-               href="mailto:ahmet.utku.can1@gmail.com">
+            <a
+                href="mailto:ahmet.utku.can1@gmail.com"
+                class="card social-card">
 
                 <div class="card-icon">
+
                     <svg viewBox="0 0 24 24">
-                        <rect x="3" y="5" width="18"
-                              height="14" rx="2"/>
+
+                        <rect x="3" y="5"
+                              width="18" height="14"
+                              rx="2"/>
+
                         <path d="m3 7 9 6 9-6"/>
+
                     </svg>
+
                 </div>
 
                 <h3>E-posta</h3>
 
                 <p class="address">
+
                     ahmet.utku.can1@gmail.com
+
                 </p>
 
                 <span class="arrow">
+
                     E-posta Gönder ↗
+
                 </span>
 
             </a>
 
-            <a class="card social-card"
-               href="https://www.instagram.com/can.software1/"
-               target="_blank"
-               rel="noopener noreferrer">
+            <a
+                href="https://www.instagram.com/can.software1/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card social-card">
 
                 <div class="card-icon">
+
                     <svg viewBox="0 0 24 24">
-                        <rect x="3" y="3" width="18"
-                              height="18" rx="5"/>
+
+                        <rect x="3" y="3"
+                              width="18" height="18"
+                              rx="5"/>
+
                         <circle cx="12" cy="12" r="4"/>
+
                         <path d="M17.5 6.5h.01"/>
+
                     </svg>
+
                 </div>
 
                 <h3>Instagram</h3>
 
-                <p class="address">@can.software1</p>
+                <p class="address">
+
+                    @can.software1
+
+                </p>
 
                 <span class="arrow">
+
                     Profili Ziyaret Et ↗
+
                 </span>
 
             </a>
 
-            <a class="card social-card"
-               href="https://www.tiktok.com/@can.software1"
-               target="_blank"
-               rel="noopener noreferrer">
+            <a
+                href="https://www.tiktok.com/@can.software1"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card social-card">
 
                 <div class="card-icon">
+
                     <svg viewBox="0 0 24 24">
+
                         <path d="M14 3v13a4 4 0 1 1-4-4"/>
+
                         <path d="M14 3c0 4 3 6 7 6"/>
+
                     </svg>
+
                 </div>
 
                 <h3>TikTok</h3>
 
-                <p class="address">@can.software1</p>
+                <p class="address">
+
+                    @can.software1
+
+                </p>
 
                 <span class="arrow">
+
                     Profili Ziyaret Et ↗
+
                 </span>
 
             </a>
@@ -1592,19 +1832,31 @@ footer {
 
                 <a href="#home" class="brand">
 
-                    <div class="brand-icon">CS</div>
+                    <img
+                        src="logo%20(2).png"
+                        class="brand-logo"
+                        alt="CAN SOFTWARE">
 
                     <div class="brand-name">
+
                         CAN SOFTWARE
-                        <small>TECHNOLOGY & GAMES</small>
+
+                        <small>
+
+                            TECHNOLOGY & GAMES
+
+                        </small>
+
                     </div>
 
                 </a>
 
                 <p class="footer-description">
+
+                    Türkiye'den dünyaya teknoloji.
                     İnteraktif oyunlar, yapay zekâ
-                    ve yeni nesil yazılım teknolojileri.
-                    Geleceği kodluyoruz.
+                    ve yeni nesil yazılımlar.
+
                 </p>
 
             </div>
@@ -1614,7 +1866,9 @@ footer {
                 <strong>Kurumsal</strong>
 
                 <a href="#about">Hakkımızda</a>
+
                 <a href="#founder">Kurucumuz</a>
+
                 <a href="#development">Geliştirme</a>
 
             </div>
@@ -1623,8 +1877,17 @@ footer {
 
                 <strong>Teknolojiler</strong>
 
-                <a href="#games">Interactive Oyunlar</a>
-                <a href="#software">Yazılımlar</a>
+                <a href="#games">
+
+                    Interactive Oyunlar
+
+                </a>
+
+                <a href="#software">
+
+                    Yazılımlar
+
+                </a>
 
             </div>
 
@@ -1632,20 +1895,28 @@ footer {
 
                 <strong>Sosyal Medya</strong>
 
-                <a href="https://www.instagram.com/can.software1/"
-                   target="_blank"
-                   rel="noopener noreferrer">
+                <a
+                    href="https://www.instagram.com/can.software1/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
                     Instagram
+
                 </a>
 
-                <a href="https://www.tiktok.com/@can.software1"
-                   target="_blank"
-                   rel="noopener noreferrer">
+                <a
+                    href="https://www.tiktok.com/@can.software1"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
                     TikTok
+
                 </a>
 
                 <a href="mailto:ahmet.utku.can1@gmail.com">
+
                     E-posta
+
                 </a>
 
             </div>
@@ -1655,19 +1926,31 @@ footer {
         <div class="footer-bottom">
 
             <span>
+
                 © <span id="year">2026</span>
-                CAN SOFTWARE. Tüm hakları saklıdır.
+                CAN SOFTWARE.
+                Tüm hakları saklıdır.
+
             </span>
 
             <span>
+
                 Kurucu: Ahmet Utku Can
+
             </span>
 
         </div>
 
-        <p style="font-size:10px;color:#777;margin-top:20px;">
-            CAN SOFTWARE bağımsız bir yazılım markasıdır.
-            TikTok ile resmî bir ortaklığı bulunmamaktadır.
+        <p style="
+            font-size:11px;
+            color:#888;
+            margin-top:20px;
+        ">
+
+            CAN SOFTWARE bağımsız bir yazılım
+            markasıdır. TikTok ile resmî bir
+            ortaklığı bulunmamaktadır.
+
         </p>
 
     </div>
@@ -1676,10 +1959,22 @@ footer {
 
 <script>
 
-// Mobil menü
+// MOBİL MENÜ
 
 const menuBtn = document.getElementById("menuBtn");
+
 const nav = document.getElementById("nav");
+
+function closeMenu() {
+
+    nav.classList.remove("open");
+
+    menuBtn.setAttribute(
+        "aria-expanded",
+        "false"
+    );
+
+}
 
 menuBtn.addEventListener("click", () => {
 
@@ -1694,37 +1989,21 @@ menuBtn.addEventListener("click", () => {
 
 document.querySelectorAll("nav a").forEach(link => {
 
-    link.addEventListener("click", () => {
-
-        nav.classList.remove("open");
-
-        menuBtn.setAttribute(
-            "aria-expanded",
-            "false"
-        );
-
-    });
+    link.addEventListener("click", closeMenu);
 
 });
-
-// Escape ile menüyü kapat
 
 document.addEventListener("keydown", event => {
 
     if (event.key === "Escape") {
 
-        nav.classList.remove("open");
-
-        menuBtn.setAttribute(
-            "aria-expanded",
-            "false"
-        );
+        closeMenu();
 
     }
 
 });
 
-// Kaydırma ilerleme çubuğu
+// KAYDIRMA İLERLEME ÇUBUĞU
 
 const progress = document.getElementById("progress");
 
@@ -1756,20 +2035,23 @@ window.addEventListener(
 
 updateProgress();
 
-// Bölüm animasyonları
+// BÖLÜM ANİMASYONLARI
 
 if ("IntersectionObserver" in window) {
 
     document.documentElement.classList.add("js");
 
     const observer = new IntersectionObserver(
+
         entries => {
 
             entries.forEach(entry => {
 
                 if (entry.isIntersecting) {
 
-                    entry.target.classList.add("visible");
+                    entry.target.classList.add(
+                        "visible"
+                    );
 
                     observer.unobserve(entry.target);
 
@@ -1778,15 +2060,21 @@ if ("IntersectionObserver" in window) {
             });
 
         },
+
         { threshold: 0.05 }
+
     );
 
     document.querySelectorAll(".reveal")
-        .forEach(section => observer.observe(section));
+        .forEach(section => {
+
+            observer.observe(section);
+
+        });
 
 }
 
-// Otomatik telif yılı
+// OTOMATİK YIL
 
 document.getElementById("year").textContent =
     new Date().getFullYear();
