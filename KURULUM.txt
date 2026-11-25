@@ -1,0 +1,3 @@
+CAN SOFTWARE OFFICIAL
+ZIP dosyasını açın ve tüm dosyaları mevcut sitenin yayın klasörüne yükleyin. index.html dosyasını değiştirin. Yerel önizleme için index.html dosyasını açın. EXE dosyası yaklaşık 127 MiB olduğundan GitHub normal dosya yükleme sınırını aşar; GitHub Releases veya harici dosya barındırma kullanıyorsanız index.html içindeki downloadLink href değerini gerçek HTTPS indirme bağlantısıyla değiştirin.
+EXE çalıştırılmamış ve güvenlik taraması yapılmamıştır. Galaksi görsele göre +25 WIN olarak yazılmıştır.
