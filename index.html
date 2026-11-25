@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#08080b">
-<meta name="description" content="CAN SOFTWARE - TikTok Interactive Oyunlar, yazılım ve yapay zekâ teknolojileri.">
+<meta name="description" content="CAN SOFTWARE - 2019'dan bugüne yazılım, yapay zekâ ve TikTok Interactive Oyunlar.">
 
 <title>CAN SOFTWARE | Geleceği Kodluyoruz</title>
 
@@ -15,7 +15,7 @@
 
 :root {
     --red: #ff173d;
-    --dark: #08080b;
+    --bg: #08080b;
     --panel: #121217;
     --text: #f5f5f7;
     --muted: #a0a0ad;
@@ -34,7 +34,7 @@ html {
 }
 
 body {
-    background: var(--dark);
+    background: var(--bg);
     color: var(--text);
     font-family: "Segoe UI", Arial, sans-serif;
     line-height: 1.7;
@@ -46,14 +46,14 @@ a {
     text-decoration: none;
 }
 
-button {
-    cursor: pointer;
-    font: inherit;
-}
-
 img {
     max-width: 100%;
     display: block;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
 }
 
 ::selection {
@@ -81,10 +81,10 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(8,8,11,.92);
+    z-index: 1000;
+    background: rgba(8,8,11,.94);
     backdrop-filter: blur(25px);
     border-bottom: 1px solid var(--border);
-    z-index: 1000;
 }
 
 .navbar {
@@ -117,23 +117,23 @@ header {
 
 .brand-name small {
     display: block;
+    color: var(--muted);
     font-size: 9px;
     letter-spacing: 2px;
-    color: var(--muted);
     margin-top: 6px;
 }
 
 nav {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 23px;
 }
 
 nav a {
     font-size: 13px;
     font-weight: 600;
     color: #c3c3ce;
-    transition: .25s;
+    transition: .3s;
 }
 
 nav a:hover {
@@ -148,10 +148,10 @@ nav a:hover {
 
 .menu-btn {
     display: none;
-    color: white;
     background: transparent;
+    color: white;
     border: none;
-    font-size: 27px;
+    font-size: 28px;
 }
 
 /* ANA SAYFA */
@@ -174,7 +174,7 @@ nav a:hover {
     background:
         radial-gradient(
             ellipse at 80% 50%,
-            #ff173d22,
+            #ff173d25,
             transparent 50%
         ),
         linear-gradient(
@@ -193,18 +193,18 @@ nav a:hover {
 .hero-layout {
     display: grid;
     grid-template-columns: 1.1fr .9fr;
-    gap: 55px;
     align-items: center;
+    gap: 55px;
 }
 
 .hero-tag {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: #ffffff06;
-    border: 1px solid var(--border);
     padding: 8px 16px;
+    border: 1px solid var(--border);
     border-radius: 30px;
+    background: #ffffff06;
     font-size: 11px;
     letter-spacing: 2px;
     margin-bottom: 30px;
@@ -213,8 +213,8 @@ nav a:hover {
 .dot {
     width: 8px;
     height: 8px;
-    background: var(--red);
     border-radius: 50%;
+    background: var(--red);
     box-shadow: 0 0 15px var(--red);
     animation: pulse 2s infinite;
 }
@@ -323,8 +323,8 @@ nav a:hover {
     left: -5px;
     width: 10px;
     height: 10px;
-    border-radius: 50%;
     background: var(--red);
+    border-radius: 50%;
     box-shadow: 0 0 20px var(--red);
 }
 
@@ -389,7 +389,7 @@ section {
 }
 
 .section-head {
-    max-width: 800px;
+    max-width: 850px;
     margin-bottom: 40px;
 }
 
@@ -464,7 +464,7 @@ section {
     stroke-linejoin: round;
 }
 
-/* HAKKIMIZDA */
+/* HAKKIMIZDA VE TARİHÇE */
 
 .about-layout {
     display: grid;
@@ -476,6 +476,7 @@ section {
 .about-text p {
     color: var(--muted);
     margin-bottom: 20px;
+    font-size: 16px;
 }
 
 .about-logo-box {
@@ -494,6 +495,113 @@ section {
     max-width: 330px;
     margin: auto;
     border-radius: 12px;
+}
+
+.history-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.history-card {
+    min-height: 140px;
+    padding: 20px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(
+        145deg,
+        #191219,
+        #101014
+    );
+    border: 1px solid #ff173d40;
+    border-radius: 14px;
+    transition: .35s;
+}
+
+.history-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--red);
+    box-shadow: 0 0 30px #ff173d25;
+}
+
+.history-card strong {
+    display: block;
+    color: var(--red);
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 8px;
+    text-shadow: 0 0 20px #ff173d40;
+}
+
+.history-card span {
+    color: #d5d5df;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.history-flag {
+    width: 55px;
+    height: 36px;
+    margin: 8px auto 15px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* MİSYON VE VİZYON */
+
+.mission-vision {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-top: 40px;
+}
+
+.mission-box {
+    background: linear-gradient(
+        145deg,
+        #17171d,
+        #101014
+    );
+    border: 1px solid #ff173d30;
+    border-left: 3px solid var(--red);
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.mission-box h3 {
+    color: var(--red);
+    font-size: 23px;
+    margin: 10px 0 15px;
+}
+
+.mission-box p {
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.history-slogan {
+    text-align: center;
+    margin-top: 35px;
+    padding: 30px;
+    background: #ff173d08;
+    border: 1px solid #ff173d30;
+    border-radius: 12px;
+}
+
+.history-slogan h3 {
+    font-size: clamp(19px, 3vw, 28px);
+}
+
+.history-slogan p {
+    color: var(--red);
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 12px;
 }
 
 /* OYUN BÖLÜMÜ */
@@ -596,7 +704,7 @@ section {
     margin-bottom: 20px;
 }
 
-/* GELİŞTİRME */
+/* GELİŞTİRME MERKEZİ */
 
 .roadmap {
     border-top: 1px solid var(--border);
@@ -815,7 +923,6 @@ footer {
     section {
         padding: 70px 0;
     }
-
 }
 
 @media(max-width: 600px) {
@@ -834,7 +941,7 @@ footer {
     }
 
     .hero h1 {
-        font-size: 47px;
+        font-size: clamp(36px, 10vw, 47px);
         letter-spacing: -2px;
     }
 
@@ -881,6 +988,13 @@ footer {
         padding: 25px;
     }
 
+    .mission-vision {
+        grid-template-columns: 1fr;
+    }
+
+    .history-card strong {
+        font-size: 26px;
+    }
 }
 
 @media(prefers-reduced-motion: reduce) {
@@ -898,7 +1012,6 @@ footer {
         opacity: 1;
         transform: none;
     }
-
 }
 
 </style>
@@ -934,7 +1047,7 @@ footer {
         <button
             class="menu-btn"
             id="menuBtn"
-            aria-label="Menüyü aç"
+            aria-label="Menüyü aç veya kapat"
             aria-expanded="false"
             aria-controls="nav">
 
@@ -979,7 +1092,7 @@ footer {
 
                 <span class="dot"></span>
 
-                TÜRKİYE'DEN DÜNYAYA TEKNOLOJİ
+                2019'DAN BUGÜNE TEKNOLOJİ
 
             </div>
 
@@ -993,10 +1106,13 @@ footer {
 
             <p>
 
-                CAN SOFTWARE olarak interaktif oyunlar,
-                yapay zekâ sistemleri, canlı yayın
-                teknolojileri ve yeni nesil yazılım
-                çözümleri geliştiriyoruz.
+                2019 yılında Bulgaristan'da başlayan
+                teknoloji yolculuğumuz, bugün CAN SOFTWARE
+                markasıyla Türkiye'den dünyaya uzanıyor.
+
+                İnteraktif oyunlar, yapay zekâ sistemleri,
+                canlı yayın teknolojileri ve yeni nesil
+                yazılım çözümleri geliştiriyoruz.
 
             </p>
 
@@ -1010,7 +1126,7 @@ footer {
 
                 <a href="#about" class="btn btn-secondary">
 
-                    Bizi Tanıyın
+                    Hikâyemizi Keşfet
 
                 </a>
 
@@ -1082,61 +1198,280 @@ footer {
 
 <section id="about" class="reveal">
 
-    <div class="container about-layout">
+    <div class="container">
 
-        <div class="about-text">
+        <div class="about-layout">
 
-            <div class="section-head">
+            <div class="about-text">
 
-                <div class="eyebrow">
-                    01 / Hakkımızda
+                <div class="section-head">
+
+                    <div class="eyebrow">
+
+                        01 / Kurumsal Tarihçemiz
+
+                    </div>
+
+                    <h2>
+
+                        2019'dan Bugüne Uzanan
+                        Teknoloji Yolculuğu.
+
+                    </h2>
+
                 </div>
 
-                <h2>
+                <p>
 
-                    Türk teknoloji vizyonuyla
-                    geleceğe.
+                    CAN SOFTWARE'in temelleri,
+                    kurucumuz Ahmet Utku Can'ın
+                    2019 yılında Bulgaristan'da
+                    başladığı yazılım ve teknoloji
+                    çalışmalarıyla atılmıştır.
 
-                </h2>
+                </p>
+
+                <p>
+
+                    Bulgaristan'da başlayan bu yolculuk,
+                    yıllar içerisinde gelişen teknik
+                    bilgi birikimi, deneyim ve yenilikçi
+                    vizyonla bugünkü CAN SOFTWARE
+                    markasına dönüşmüştür.
+
+                </p>
+
+                <p>
+
+                    Teknolojiyi yalnızca bir araç olarak
+                    değil, geleceği şekillendiren güçlü
+                    bir değer olarak görüyoruz.
+
+                    Bu anlayışla özgün fikirleri
+                    yenilikçi dijital projelere
+                    dönüştürmek için çalışıyoruz.
+
+                </p>
+
+                <p>
+
+                    Günümüzde interaktif oyunlar,
+                    yapay zekâ sistemleri, masaüstü
+                    uygulamaları, web teknolojileri
+                    ve canlı yayın çözümleri üzerine
+                    çalışmalar yürütüyoruz.
+
+                </p>
+
+                <p>
+
+                    Türkiye'nin teknoloji alanındaki
+                    gücünü uluslararası platformlara
+                    taşımayı, özgün yazılımlar
+                    geliştirmeyi ve dijital dünyada
+                    kalıcı bir marka olmayı hedefliyoruz.
+
+                </p>
+
+                <p>
+
+                    Geçmişimizden aldığımız deneyimle
+                    geleceğin teknolojilerini
+                    geliştirmeye devam ediyoruz.
+
+                </p>
 
             </div>
 
-            <p>
+            <div>
 
-                CAN SOFTWARE; interaktif oyunlar,
-                yapay zekâ, yazılım geliştirme
-                ve canlı yayın teknolojileri
-                alanlarında çalışmalar yürüten
-                bağımsız bir teknoloji markasıdır.
+                <div class="about-logo-box">
 
-            </p>
+                    <img
+                        src="logo%20(2).png"
+                        class="about-logo"
+                        alt="CAN SOFTWARE Kurumsal Logo"
+                        loading="lazy">
 
-            <p>
+                </div>
 
-                Türkiye'den dünyaya ulaşmayı,
-                yenilikçi dijital ürünler geliştirmeyi
-                ve içerik üreticilerine yeni nesil
-                teknolojiler sunmayı hedefliyoruz.
+                <div class="history-grid">
 
-            </p>
+                    <div class="history-card">
 
-            <p>
+                        <strong>2019</strong>
 
-                Güçlü tasarım, performans,
-                kullanıcı deneyimi ve sürekli gelişim
-                çalışmalarımızın temelini oluşturur.
+                        <span>
 
-            </p>
+                            Teknolojiye İlk Adım
+
+                        </span>
+
+                    </div>
+
+                    <div class="history-card">
+
+                        <svg
+                            class="history-flag"
+                            viewBox="0 0 90 60"
+                            role="img"
+                            aria-label="Bulgaristan Bayrağı">
+
+                            <rect
+                                width="90"
+                                height="20"
+                                fill="#ffffff"/>
+
+                            <rect
+                                y="20"
+                                width="90"
+                                height="20"
+                                fill="#00966e"/>
+
+                            <rect
+                                y="40"
+                                width="90"
+                                height="20"
+                                fill="#d62612"/>
+
+                        </svg>
+
+                        <span>
+
+                            Bulgaristan'da Başlangıç
+
+                        </span>
+
+                    </div>
+
+                    <div class="history-card">
+
+                        <svg
+                            class="history-flag"
+                            viewBox="0 0 90 60"
+                            role="img"
+                            aria-label="Türk Bayrağı">
+
+                            <rect
+                                width="90"
+                                height="60"
+                                fill="#e30a17"/>
+
+                            <circle
+                                cx="30"
+                                cy="30"
+                                r="15"
+                                fill="white"/>
+
+                            <circle
+                                cx="34"
+                                cy="30"
+                                r="12"
+                                fill="#e30a17"/>
+
+                            <polygon
+                                points="44,30 61,24.5
+                                50.5,39 50.5,21
+                                61,35.5"
+                                fill="white"/>
+
+                        </svg>
+
+                        <span>
+
+                            Türk Teknoloji Vizyonu
+
+                        </span>
+
+                    </div>
+
+                    <div class="history-card">
+
+                        <strong>GLOBAL</strong>
+
+                        <span>
+
+                            Uluslararası Hedefler
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
-        <div class="about-logo-box">
+        <!-- MİSYON VE VİZYON -->
 
-            <img
-                src="logo%20(2).png"
-                class="about-logo"
-                alt="CAN SOFTWARE Kurumsal Logo"
-                loading="lazy">
+        <div class="mission-vision">
+
+            <div class="mission-box">
+
+                <div class="eyebrow">
+
+                    OUR MISSION
+
+                </div>
+
+                <h3>Misyonumuz</h3>
+
+                <p>
+
+                    Yenilikçi, güvenilir ve kullanıcı
+                    odaklı teknolojiler geliştirerek
+                    dijital dünyanın ihtiyaçlarına
+                    özgün çözümler sunmak.
+
+                    Yazılım, yapay zekâ ve oyun
+                    teknolojileri alanında sürdürülebilir
+                    değer üretmek.
+
+                </p>
+
+            </div>
+
+            <div class="mission-box">
+
+                <div class="eyebrow">
+
+                    OUR VISION
+
+                </div>
+
+                <h3>Vizyonumuz</h3>
+
+                <p>
+
+                    Türkiye'den dünyaya ulaşan,
+                    uluslararası ölçekte tanınan,
+                    yazılım, yapay zekâ ve interaktif
+                    oyun teknolojileri alanında
+                    güçlü ve yenilikçi bir marka olmak.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- KURUMSAL SLOGAN -->
+
+        <div class="history-slogan">
+
+            <h3>
+
+                2019'da Bulgaristan'da başlayan yolculuk,
+                bugün Türkiye'den dünyaya uzanıyor.
+
+            </h3>
+
+            <p>
+
+                CAN SOFTWARE — GELECEĞİ KODLUYORUZ.
+
+            </p>
 
         </div>
 
@@ -1153,7 +1488,9 @@ footer {
         <div class="section-head">
 
             <div class="eyebrow">
+
                 02 / Teknolojilerimiz
+
             </div>
 
             <h2>Fikirden teknolojiye.</h2>
@@ -1277,7 +1614,9 @@ footer {
         <div class="section-head">
 
             <div class="eyebrow">
+
                 03 / CAN SOFTWARE GAMES
+
             </div>
 
             <h2>
@@ -1354,7 +1693,9 @@ footer {
             <article class="card">
 
                 <div class="number">
+
                     01 — INTERACTION
+
                 </div>
 
                 <h3>Canlı Hediye Etkileşimi</h3>
@@ -1372,7 +1713,9 @@ footer {
             <article class="card">
 
                 <div class="number">
+
                     02 — COMPETITION
+
                 </div>
 
                 <h3>Rekabet ve WIN Sistemi</h3>
@@ -1390,7 +1733,9 @@ footer {
             <article class="card">
 
                 <div class="number">
+
                     03 — CUSTOMIZATION
+
                 </div>
 
                 <h3>Özel Oyun Geliştirme</h3>
@@ -1420,7 +1765,9 @@ footer {
         <div class="section-head">
 
             <div class="eyebrow">
+
                 04 / Yazılımlarımız
+
             </div>
 
             <h2>CAN SOFTWARE ekosistemi.</h2>
@@ -1663,12 +2010,35 @@ footer {
 
                 <p>
 
-                    CAN SOFTWARE markasının kurucusu.
-                    Yazılım geliştirme, interaktif oyunlar,
-                    yapay zekâ ve canlı yayın teknolojileri
-                    üzerine çalışmalar yürütmektedir.
+                    CAN SOFTWARE markasının kurucusu
+                    ve geliştiricisidir.
+
+                    2019 yılında Bulgaristan'da
+                    başladığı yazılım ve teknoloji
+                    yolculuğunu, bugün CAN SOFTWARE
+                    çatısı altında sürdürmektedir.
 
                 </p>
+
+                <p>
+
+                    İnteraktif oyunlar, yapay zekâ,
+                    yazılım geliştirme ve canlı yayın
+                    teknolojileri üzerine çalışmalar
+                    yürütmekte; özgün projelerle
+                    Türkiye'den uluslararası pazarlara
+                    ulaşmayı hedeflemektedir.
+
+                </p>
+
+                <div class="tags">
+
+                    <span>Since 2019</span>
+                    <span>Founder</span>
+                    <span>Software Developer</span>
+                    <span>Game Developer</span>
+
+                </div>
 
             </div>
 
@@ -1853,8 +2223,11 @@ footer {
 
                 <p class="footer-description">
 
-                    Türkiye'den dünyaya teknoloji.
-                    İnteraktif oyunlar, yapay zekâ
+                    2019'da Bulgaristan'da başlayan
+                    teknoloji yolculuğu.
+
+                    Bugün Türkiye'den dünyaya
+                    interaktif oyunlar, yapay zekâ
                     ve yeni nesil yazılımlar.
 
                 </p>
@@ -1939,6 +2312,12 @@ footer {
 
             </span>
 
+            <span>
+
+                🇹🇷 Türkiye'den Dünyaya
+
+            </span>
+
         </div>
 
         <p style="
@@ -1962,7 +2341,6 @@ footer {
 // MOBİL MENÜ
 
 const menuBtn = document.getElementById("menuBtn");
-
 const nav = document.getElementById("nav");
 
 function closeMenu() {
